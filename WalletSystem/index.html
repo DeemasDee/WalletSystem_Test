@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wallet System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <div id="login">
+      <h2>Login</h2>
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+      <button onclick="login()">Login</button>
+    </div>
+
+    <div id="dashboard" class="hidden">
+      <h2>Dashboard</h2>
+      <p>Saldo Dompet: <span id="balance">0</span></p>
+      <button onclick="showCreateWallet()">Create Wallet</button>
+      <button onclick="showTransaction()">New Transaction</button>
+    </div>
+
+    <div id="create-wallet" class="hidden">
+      <h2>Create Wallet</h2>
+      <input type="number" id="initialBalance" placeholder="Initial Balance">
+      <button onclick="createWallet()">Create Wallet</button>
+      <button onclick="showDashboard()">Back to Dashboard</button>
+    </div>
+
+    <div id="transaction" class="hidden">
+      <h2>New Transaction</h2>
+      <input type="number" id="transactionAmount" placeholder="Amount">
+      <input type="text" id="sourceWallet" placeholder="Source Wallet ID">
+      <input type="text" id="targetWallet" placeholder="Target Wallet ID">
+      <button onclick="makeTransaction()">Submit Transaction</button>
+      <button onclick="showDashboard()">Back to Dashboard</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
